@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="topnav">
+      <div class="hamburger">
+          <span class="pullLeft" style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; </span>
+          <span class="Title"><h1>{{ Title }}</h1> </span> 
+      </div>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="loginForm">
+    <p>{{UserNameDescriptor}}: <input id="loginU" type="text" required (change)="validateInfo()"></p>
+    <p>{{PasswordDescriptor}}: <input id="loginP" type="password" required (change)="validateInfo()"></p>
+
+    <button id="loginB" class="loginButton" (click)="loginUser()" type="button" [disabled]="!getIsValid()">Login</button>
+  </div>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <!-- <a href="#">Configure</a> -->
+    <!-- <a href="#">Rest Password</a> -->
+    <div class="card"><a href="/config">Configure</a> </div>
+    <div class="card"><a href="#">Reset Password</a> </div>
+  </div>
+</ion-content>
